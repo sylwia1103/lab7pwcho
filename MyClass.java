@@ -6,7 +6,7 @@ class MyClass {
 
         Statement statement;
         Connection connection = null;
-while(true){
+while(connection==null){
         try {
 
             connection = DriverManager.getConnection(
@@ -22,9 +22,7 @@ while(true){
             Scanner in = new Scanner(System.in);
             while(true) {
                 System.out.println("'d' dodaj mecze, 'w' wyswietl wszystkie mecze");
-		String wybor = "w";
-		if(in.hasNextLine())
-                	wybor = in.nextLine();
+		String wybor = in.nextLine();
                 if ("w".equals(wybor)) {
                     statement = connection.createStatement();
                     String zapytanie = "select * from mecze;";
