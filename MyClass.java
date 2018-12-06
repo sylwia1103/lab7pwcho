@@ -6,7 +6,7 @@ class MyClass {
 
         Statement statement;
         Connection connection = null;
-while(connection==null){
+while(true){
         try {
 
             connection = DriverManager.getConnection(
@@ -56,6 +56,7 @@ while(connection==null){
                 }
             }
         } catch(Exception e) {
+		System.out.println(e);
         }
 }
     }
